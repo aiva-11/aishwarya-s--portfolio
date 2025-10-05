@@ -5,61 +5,48 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AISHWARYA S — Portfolio</title>
   <meta name="description" content="AISHWARYA S — Aspiring Software Developer skilled in Java, C, Web Technologies & UI/UX. Based in Trichy, India.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b1220;
-      --card:#0f1a27;
-      --accent:#6ea8ff;
-      --muted:#98a0b3;
-      --glass: rgba(255,255,255,0.03);
-      --radius:18px;
+    :root {
+      --bg:#0b1220; --card:#0f1a27; --accent:#6ea8ff; --muted:#9ca4b6;
+      --radius:16px; --glass:rgba(255,255,255,0.03);
     }
-    *{box-sizing:border-box;scroll-behavior:smooth;}
-    body{
-      margin:0;
-      font-family:Inter, system-ui, sans-serif;
-      background:linear-gradient(180deg,#07101a 0%, #07121b 100%);
-      color:#e6eef8;
-      -webkit-font-smoothing:antialiased;
-      line-height:1.5;
-      padding:28px;
+    *{box-sizing:border-box}
+    body {
+      margin:0; font-family:Inter,sans-serif; background:linear-gradient(180deg,#08111d,#0b1220);
+      color:#e6eef8; -webkit-font-smoothing:antialiased; line-height:1.5; padding:24px;
     }
     .container{max-width:1100px;margin:0 auto}
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;}
-    .logo{font-family:Nunito;font-weight:800;color:var(--accent);}
-    nav a{color:var(--muted);margin:0 10px;text-decoration:none;font-weight:600;transition:color 0.3s;}
-    nav a:hover{color:var(--accent);}
-    .card{background:var(--card);border-radius:var(--radius);padding:22px;margin-bottom:22px;box-shadow:0 0 10px rgba(0,0,0,0.2);opacity:0;transform:translateY(20px);transition:all 0.8s ease;}
-    .card.show{opacity:1;transform:translateY(0);}
-    .hero{display:grid;grid-template-columns:1fr 240px;gap:20px;align-items:center;}
-    .hero h1{font-size:2rem;margin:0;color:#bfe0ff;}
-    .hero p{color:var(--muted);}
-    .btn{background:linear-gradient(90deg,var(--accent),#7bd0ff);color:#012033;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;margin-right:10px;transition:all 0.3s;}
-    .btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent);}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 0 10px rgba(110,168,255,0.4);}
-    .avatar{width:240px;height:240px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,0.1);box-shadow:0 0 15px rgba(110,168,255,0.3);}
-    .avatar img{width:100%;height:100%;object-fit:cover;}
-    section h3{color:var(--accent);}
-    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;}
-    .tag{background:rgba(255,255,255,0.1);padding:4px 8px;border-radius:999px;font-size:12px;}
-    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
-    .project{background:rgba(255,255,255,0.03);padding:14px;border-radius:12px;cursor:pointer;transition:transform .3s,box-shadow .3s;}
-    .project:hover{transform:translateY(-6px);box-shadow:0 4px 20px rgba(110,168,255,0.25);}
-    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;}
-    .cert img{width:100%;height:120px;object-fit:cover;border-radius:10px;transition:transform .4s;}
-    .cert img:hover{transform:scale(1.05);}
-    .contact-grid{display:grid;grid-template-columns:1fr 340px;gap:20px;}
-    input,textarea{width:100%;padding:10px;border-radius:8px;border:none;background:rgba(255,255,255,0.1);color:white;}
-    textarea{min-height:100px;}
-    footer{text-align:center;margin-top:20px;color:var(--muted);font-size:14px;}
-    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:100;}
-    .modal.show{display:flex;}
-    .modal-card{background:var(--card);padding:20px;border-radius:14px;max-width:600px;width:90%;animation:fadeIn 0.4s ease;}
-    @keyframes fadeIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
-    .close{background:none;border:none;color:var(--muted);font-weight:700;float:right;cursor:pointer;}
-    @media(max-width:700px){.hero{grid-template-columns:1fr;text-align:center;}}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    .logo{font-family:Nunito;font-weight:800;color:var(--accent)}
+    nav a{color:var(--muted);margin:0 8px;text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--accent)}
+    .card{background:var(--card);border-radius:var(--radius);padding:20px;margin-bottom:18px;box-shadow:0 0 10px rgba(0,0,0,0.3)}
+    .hero{display:grid;grid-template-columns:1fr 230px;gap:22px;align-items:center}
+    .avatar{width:230px;height:230px;border-radius:50%;overflow:hidden;border:5px solid rgba(255,255,255,0.1);cursor:pointer}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    h1 span{color:var(--accent)}
+    .btn{background:linear-gradient(90deg,var(--accent),#82d0ff);color:#00182f;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;margin-right:8px}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+    .section-title h3{color:var(--accent);margin:0 0 10px}
+    .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .bar{height:8px;background:#1b2433;border-radius:6px;overflow:hidden}
+    .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#7cd4ff)}
+    .tags{display:flex;flex-wrap:wrap;gap:6px}
+    .tag{background:rgba(255,255,255,0.1);padding:4px 8px;border-radius:999px;font-size:12px}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+    .project{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;cursor:pointer;transition:transform .2s}
+    .project:hover{transform:translateY(-4px)}
+    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+    .cert img{width:100%;height:120px;object-fit:cover;border-radius:8px;cursor:pointer;transition:transform .2s}
+    .cert img:hover{transform:scale(1.05)}
+    footer{text-align:center;color:var(--muted);margin-top:20px}
+    .modal,.img-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);z-index:100}
+    .modal.show,.img-modal.show{display:flex}
+    .modal-card{background:var(--card);padding:18px;border-radius:12px;max-width:600px;width:90%}
+    .img-modal img{max-width:90%;max-height:80vh;border-radius:10px}
+    .close-btn{background:none;border:none;color:#ccc;font-size:18px;cursor:pointer;float:right}
+    @media(max-width:700px){.hero{grid-template-columns:1fr;text-align:center}.avatar{margin:0 auto}}
   </style>
 </head>
 <body>
@@ -77,53 +64,56 @@
 
   <section class="hero card">
     <div>
-      <h1>Hi, I'm <span style="color:var(--accent)">AISHWARYA S</span></h1>
-      <p><strong>Your AI Partner for Smarter Decisions, Faster Solutions, and Scalable Innovation</strong></p>
+      <h1>Hi, I'm <span>AISHWARYA S</span></h1>
+      <p><strong>Your AI Partner for Smarter Decisions, Faster Solutions, and Scalable Innovation.</strong></p>
       <p>Aspiring Software Developer with strong foundations in Java, C, Web Technologies (HTML, CSS, JavaScript) and skilled in UI/UX design. Passionate about problem-solving and eager to contribute to building scalable applications while continuously learning new technologies in a collaborative environment.</p>
       <a class="btn" href="#projects">View My Work</a>
       <a class="btn secondary" href="https://drive.google.com/file/d/16jPyUNWAGuROi4xnHQ3YJVnV6XNN5vli/view?usp=drivesdk" target="_blank">View Resume</a>
     </div>
-    <div class="avatar">
-      <img src="https://drive.google.com/uc?export=view&id=130iE-T-hXPW6iiqoiKPJUwXw0KveVMkJ" alt="Aishwarya S">
-    </div>
+    <div class="avatar" id="avatar"><img src="https://drive.google.com/uc?export=view&id=130iE-T-hXPW6iiqoiKPJUwXw0KveVMkJ" alt="Aishwarya S"></div>
   </section>
 
   <section id="about" class="card">
-    <h3>About Me</h3>
+    <div class="section-title"><h3>About Me</h3></div>
     <p>I'm an aspiring software developer with strong foundations in Java, C and modern web technologies. Skilled in UI/UX design and motivated by problem-solving, I aim to build scalable applications while collaborating and continuously learning new tools and frameworks.</p>
   </section>
 
   <section id="skills" class="card">
-    <h3>Technical Skills</h3>
-    <ul>
-      <li>Backend (Java, C): <strong>85%</strong></li>
-      <li>Web Technologies (HTML, CSS, JS): <strong>80%</strong></li>
-      <li>UI/UX Design: <strong>85%</strong></li>
-      <li>Database & APIs: <strong>75%</strong></li>
-    </ul>
-    <p><strong>Tools & Technologies:</strong> Java, C, HTML, CSS, JavaScript, Figma, Canva, MySQL, Git, VS Code</p>
+    <div class="section-title"><h3>Technical Skills</h3></div>
+    <div class="skills-grid">
+      <div>
+        <p>Backend (Java, C) — 85%</p><div class="bar"><i style="width:85%"></i></div>
+        <p>Web Technologies (HTML, CSS, JS) — 80%</p><div class="bar"><i style="width:80%"></i></div>
+        <p>UI/UX Design — 85%</p><div class="bar"><i style="width:85%"></i></div>
+        <p>Database & APIs — 75%</p><div class="bar"><i style="width:75%"></i></div>
+      </div>
+      <div>
+        <div class="tags">
+          <span class="tag">Java</span><span class="tag">C</span><span class="tag">HTML</span><span class="tag">CSS</span>
+          <span class="tag">JavaScript</span><span class="tag">Figma</span><span class="tag">Canva</span><span class="tag">MySQL</span>
+          <span class="tag">Git</span><span class="tag">VS Code</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="projects" class="card">
-    <h3>Projects</h3>
+    <div class="section-title"><h3>Projects</h3></div>
     <div class="projects-grid">
-      <div class="project" data-title="A page about cats" data-desc="I've created a responsive HTML page showcasing the history, companionship, and benefits of Cats. The page is designed to look great on any device, from small screens to larger displays." data-tags="HTML5, CSS" data-src="https://github.com/aiva-11/Cat-quote">
-        <h4>A page about cats</h4>
-        <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS</span></div>
+      <div class="project" data-title="A Page About Cats" data-desc="Responsive HTML page showcasing the history, companionship, and benefits of cats. Designed to look great on any device." data-tags="HTML5, CSS" data-src="https://github.com/aiva-11/Cat-quote">
+        <h4>A Page About Cats</h4><div class="tags"><span class="tag">HTML5</span><span class="tag">CSS</span></div>
       </div>
       <div class="project" data-title="Student Result Management System" data-desc="Console-based Java app with Admin and Student modules to add, update, view and display student marks and grades." data-tags="Core Java" data-src="https://github.com/aiva-11/Student-Result-Management-System-Java-">
-        <h4>Student Result Management System</h4>
-        <div class="tags"><span class="tag">Java</span></div>
+        <h4>Student Result Management System</h4><div class="tags"><span class="tag">Java</span></div>
       </div>
-      <div class="project" data-title="Hotel Booking System" data-desc="Handles room booking, cancellation, and payment calculation with customer record storage in text files using C structures." data-tags="C, Data Structures" data-src="https://github.com/aiva-11/Hotel-Booking-System-">
-        <h4>Hotel Booking System</h4>
-        <div class="tags"><span class="tag">C</span><span class="tag">Data Structures</span></div>
+      <div class="project" data-title="Hotel Booking System" data-desc="Handles room booking, cancellation, and payment calculation with record storage in C structures." data-tags="C, Data Structures" data-src="https://github.com/aiva-11/Hotel-Booking-System-">
+        <h4>Hotel Booking System</h4><div class="tags"><span class="tag">C</span><span class="tag">Data Structures</span></div>
       </div>
     </div>
   </section>
 
   <section id="certs" class="card">
-    <h3>Certifications</h3>
+    <div class="section-title"><h3>Certifications</h3></div>
     <div class="cert-grid">
       <div class="cert"><img src="https://drive.google.com/uc?export=view&id=1oviHrPskDnidlUUdW_Xd-L-s4cUlfdiO" alt="Programming Languages"></div>
       <div class="cert"><img src="https://drive.google.com/uc?export=view&id=15IiuxpDulVpjiFbThJDg_92RismwcpHJ" alt="UI/UX Design"></div>
@@ -135,62 +125,43 @@
   </section>
 
   <section id="contact" class="card">
-    <h3>Contact</h3>
-    <div class="contact-grid">
-      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <input name="name" placeholder="Your name" required>
-        <input name="email" type="email" placeholder="Email address" required>
-        <textarea name="message" placeholder="Your message" required></textarea>
-        <button class="btn" type="submit">Send Message</button>
-      </form>
-      <div>
-        <p>Email: <a href="mailto:aiva02400@gmail.com" style="color:var(--accent)">aiva02400@gmail.com</a></p>
-        <p>Phone: <a href="tel:+917598154244" style="color:var(--accent)">+91 75981 54244</a></p>
-        <p>Location: Trichy, India</p>
-      </div>
-    </div>
+    <div class="section-title"><h3>Contact</h3></div>
+    <p>Email: <a href="mailto:aiva02400@gmail.com" style="color:var(--accent)">aiva02400@gmail.com</a> | Phone: <a href="tel:+917598154244" style="color:var(--accent)">+91 75981 54244</a><br>Trichy, India</p>
   </section>
 
-  <footer>
-    © 2025 AISHWARYA S • Built with ❤️
-  </footer>
+  <footer>© 2025 AISHWARYA S • Built with ❤️</footer>
 </div>
 
-<!-- Modal for Project Details -->
-<div id="modal" class="modal">
-  <div class="modal-card">
-    <button id="closeModal" class="close">✕</button>
-    <h3 id="modalTitle"></h3>
-    <div id="modalBody" style="color:var(--muted)"></div>
-  </div>
-</div>
+<!-- Project modal -->
+<div id="modal" class="modal"><div class="modal-card">
+  <button class="close-btn" id="closeModal">✕</button>
+  <h3 id="modalTitle"></h3><div id="modalBody"></div>
+</div></div>
+
+<!-- Image viewer -->
+<div id="imgModal" class="img-modal"><img id="imgView" src="" alt=""><button class="close-btn" id="imgClose">✕</button></div>
 
 <script>
-  // Animate on scroll
-  const cards=document.querySelectorAll('.card');
-  const reveal=()=>cards.forEach(c=>{
-    const rect=c.getBoundingClientRect();
-    if(rect.top<window.innerHeight-80)c.classList.add('show');
-  });
-  window.addEventListener('scroll',reveal);
-  reveal();
-
-  // Project modal
+  // Project modal logic
   document.querySelectorAll('.project').forEach(p=>{
-    p.addEventListener('click', ()=>{
-      const title=p.getAttribute('data-title');
-      const desc=p.getAttribute('data-desc');
-      const tags=p.getAttribute('data-tags');
-      const src=p.getAttribute('data-src');
-      document.getElementById('modalTitle').textContent=title;
-      document.getElementById('modalBody').innerHTML=
-        '<p>'+desc+'</p><p><strong>Tech:</strong> '+tags+'</p><p><a class="btn" href="'+src+'" target="_blank">Source Code</a></p>';
+    p.addEventListener('click',()=>{
+      document.getElementById('modalTitle').textContent=p.dataset.title;
+      document.getElementById('modalBody').innerHTML=`<p>${p.dataset.desc}</p><p><b>Tech:</b> ${p.dataset.tags}</p><p><a class="btn" href="${p.dataset.src}" target="_blank">Source Code</a></p>`;
       document.getElementById('modal').classList.add('show');
     });
   });
-  document.getElementById('closeModal').addEventListener('click',()=>{document.getElementById('modal').classList.remove('show');});
-  document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))document.getElementById('modal').classList.remove('show');});
+  document.getElementById('closeModal').onclick=()=>document.getElementById('modal').classList.remove('show');
+  document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')document.getElementById('modal').classList.remove('show');};
+
+  // Image viewer for avatar & certs
+  const viewer=document.getElementById('imgModal'), viewImg=document.getElementById('imgView');
+  document.getElementById('avatar').onclick=()=>{viewImg.src=document.querySelector('#avatar img').src;viewer.classList.add('show');};
+  document.querySelectorAll('.cert img').forEach(i=>i.onclick=()=>{viewImg.src=i.src;viewer.classList.add('show');});
+  document.getElementById('imgClose').onclick=()=>viewer.classList.remove('show');
+  viewer.onclick=e=>{if(e.target===viewer)viewer.classList.remove('show');};
 </script>
 </body>
 </html>
+
+
 
