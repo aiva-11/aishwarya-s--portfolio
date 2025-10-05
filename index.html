@@ -32,6 +32,7 @@
     .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
     .project{background:var(--glass);padding:12px;border-radius:10px;cursor:pointer}
+    .project:hover{transform:translateY(-4px);transition:all .3s ease}
     .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
     .cert img{width:100%;height:120px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .35s ease}
     .cert img:hover{transform:scale(1.05)}
@@ -66,13 +67,12 @@
         <a class="btn secondary" href="https://drive.google.com/file/d/16jPyUNWAGuROi4xnHQ3YJVnV6XNN5vli/view?usp=drivesdk" target="_blank">View Resume</a>
       </div>
 
-      <!-- Local photo -->
       <div class="avatar" id="avatar"><img id="avatarImg" src="AISHWARYA S PHOTO.jpg" alt="Aishwarya S"></div>
     </section>
 
     <section id="about" class="section-card">
       <div class="section-title"><h3>About Me</h3></div>
-      <p style="color:var(--muted)">I'm an aspiring software developer . I specialize in building efficient and visually appealing applications and enjoy designing user interfaces and experiences.</p>
+      <p style="color:var(--muted)">I'm an aspiring software developer from Trichy, India. I specialize in building efficient and visually appealing applications and enjoy designing user interfaces and experiences.</p>
     </section>
 
     <section id="skills" class="section-card">
@@ -93,19 +93,22 @@
     <section id="projects" class="section-card">
       <div class="section-title"><h3>Projects</h3></div>
       <div class="projects-grid">
-        <div class="project" data-title="A page about cats" data-desc="I've created a responsive HTML page showcasing the history, companionship, and benefits of cats. The page is designed to look great on any device." data-tags="HTML5, CSS" data-src="https://github.com/aiva-11/Cat-quote">
-          <h4>A page about cats</h4>
-          <p style="color:var(--muted)">Responsive HTML page showcasing the history, companionship, and benefits of cats.</p>
+        <div class="project">
+          <h4>A Page About Cats</h4>
+          <p style="color:var(--muted)">A responsive HTML page showcasing the history, companionship, and benefits of cats.</p>
+          <a class="btn secondary" href="https://github.com/aiva-11/Cat-quote" target="_blank">Source Code</a>
         </div>
 
-        <div class="project" data-title="Student Result Management System" data-desc="Console-based Java app with Admin and Student modules to add, update, view and display student marks and grades." data-tags="Core Java" data-src="https://github.com/aiva-11/Student-Result-Management-System-Java-">
+        <div class="project">
           <h4>Student Result Management System</h4>
-          <p style="color:var(--muted)">Console-based Java app with admin and student modules to manage marks and grades.</p>
+          <p style="color:var(--muted)">A console-based Java app with Admin and Student modules to add, update, view and display student marks and grades.</p>
+          <a class="btn secondary" href="https://github.com/aiva-11/Student-Result-Management-System-Java-" target="_blank">Source Code</a>
         </div>
 
-        <div class="project" data-title="Hotel Booking System" data-desc="Room booking, cancellation, and payment calculation with customer record storage in text files using C structures." data-tags="C, Data Structures" data-src="https://github.com/aiva-11/Hotel-Booking-System-">
+        <div class="project">
           <h4>Hotel Booking System</h4>
-          <p style="color:var(--muted)">Room booking, cancellation, and payment calculation using C structures and file storage.</p>
+          <p style="color:var(--muted)">Room booking, cancellation, and payment calculation with customer record storage using C structures.</p>
+          <a class="btn secondary" href="https://github.com/aiva-11/Hotel-Booking-System-" target="_blank">Source Code</a>
         </div>
       </div>
     </section>
@@ -124,12 +127,19 @@
 
     <section id="contact" class="section-card">
       <div class="section-title"><h3>Contact</h3></div>
-      <p style="color:var(--muted)">Email: <a href="mailto:aiva02400@gmail.com" style="color:var(--accent)">aiva02400@gmail.com</a> • Phone: <a href="tel:+917598154244" style="color:var(--accent)">+91 75981 54244</a></p>
-      <p style="color:var(--muted)">Location: Trichy, India • Open to opportunities</p>
+      <p style="color:var(--muted)">
+        📧 <a href="mailto:aiva02400@gmail.com" style="color:var(--accent)">aiva02400@gmail.com</a><br>
+        📱 <a href="tel:+917598154244" style="color:var(--accent)">+91 75981 54244</a><br>
+        🌍 Trichy, India • Open to opportunities
+      </p>
+      <p>
+        <a class="btn primary" href="https://github.com/aiva-11" target="_blank">GitHub</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/aishwarya-srinivasabalaji-227b32257" target="_blank">LinkedIn</a>
+      </p>
     </section>
 
     <footer>
-      <p>© 2025 AISHWARYA S • Built with ❤️</p>
+      <p>© 2025 AISHWARYA S • Built with ❤️ | <a href="https://github.com/aiva-11" style="color:var(--accent)">GitHub</a></p>
     </footer>
   </div>
 
