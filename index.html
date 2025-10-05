@@ -4,138 +4,44 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AISHWARYA S — Portfolio</title>
-  <meta name="description" content="AISHWARYA S — Aspiring Software Developer. Java, C, Web Technologies & UI/UX. Based in Trichy, India.">
+  <meta name="description" content="AISHWARYA S — Aspiring Software Developer. Java, C, Web Technologies & UI/UX.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b1220;
-      --card: #0f1a27;
-      --accent: #6ea8ff;
-      --muted: #98a0b3;
-      --glass: rgba(255,255,255,0.03);
-      --radius: 18px;
+      --bg:#0b1220; --card:#0f1a27; --accent:#6ea8ff; --muted:#98a0b3;
+      --glass: rgba(255,255,255,0.03); --radius:16px;
     }
-
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg,#07101a 0%, #07121b 100%);
-      color: #e6eef8;
-      padding: 24px;
-      line-height: 1.5;
-    }
-
-    .container { max-width: 1100px; margin: auto; }
-
-    header {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-bottom: 30px;
-    }
-
-    .logo { font-family: Nunito; font-weight: 800; color: var(--accent); font-size: 1.2rem; }
-    nav a { color: var(--muted); text-decoration: none; margin-left: 16px; font-weight: 600; }
-    nav a:hover { color: var(--accent); }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 250px;
-      gap: 30px;
-      align-items: center;
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: 0 6px 20px rgba(2,6,23,0.6);
-    }
-
-    .hero h1 {
-      margin: 0;
-      color: #bfe0ff;
-    }
-
-    .hero p { color: var(--muted); margin: 14px 0 20px; }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-weight: 700;
-      text-decoration: none;
-      margin-right: 10px;
-    }
-
-    .btn.primary { background: linear-gradient(90deg,var(--accent),#7bd0ff); color: #012033; }
-    .btn.secondary { border: 1px solid var(--accent); color: var(--accent); }
-
-    .avatar {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 4px solid rgba(255,255,255,0.1);
-      justify-self: end;
-      animation: fadeIn 1.2s ease-in-out;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    section {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 20px;
-      margin-top: 24px;
-    }
-
-    .section-title h3 {
-      color: var(--accent);
-      margin-bottom: 14px;
-      font-family: Nunito;
-    }
-
-    .skills-grid, .projects-grid, .cert-grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    .skills-grid { grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); }
-    .projects-grid { grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); }
-    .cert-grid { grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); }
-
-    .skill-card, .project, .cert {
-      background: var(--glass);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 12px;
-      padding: 14px;
-    }
-
-    .project:hover { transform: translateY(-4px); transition: 0.2s; }
-
-    .cert img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    footer {
-      text-align: center;
-      color: var(--muted);
-      margin-top: 30px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 700px) {
-      .hero { grid-template-columns: 1fr; text-align: center; }
-      .avatar { justify-self: center; }
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; background:linear-gradient(180deg,#07101a,#07121b);color:#e6eef8;padding:24px}
+    .container{max-width:1100px;margin:0 auto}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    .logo{font-family:Nunito;font-weight:800;color:var(--accent)}
+    nav a{color:var(--muted);margin-left:12px;text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--accent)}
+    .hero{display:grid;grid-template-columns:1fr 240px;gap:24px;align-items:center}
+    .hero-card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    .avatar{width:220px;height:220px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,0.08);justify-self:end;cursor:pointer}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+    .avatar img:hover{transform:scale(1.05)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;margin-right:8px}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#7bd0ff);color:#012033}
+    .btn.secondary{border:1px solid rgba(110,168,255,0.12);color:var(--accent);background:transparent}
+    section{margin-top:20px}
+    .section-card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    .section-title h3{color:var(--accent);margin:0 0 12px;font-family:Nunito}
+    .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .project{background:var(--glass);padding:12px;border-radius:10px;cursor:pointer}
+    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+    .cert img{width:100%;height:120px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .35s ease}
+    .cert img:hover{transform:scale(1.05)}
+    .modal,.img-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.72);z-index:120}
+    .modal.show,.img-modal.show{display:flex}
+    .modal-card{background:var(--card);padding:18px;border-radius:12px;max-width:720px;width:92%}
+    .img-modal img{max-width:95%;max-height:85vh;border-radius:10px}
+    .close-btn{background:none;border:0;color:#ddd;font-size:18px;cursor:pointer;position:absolute;top:18px;right:20px}
+    footer{color:var(--muted);text-align:center;margin-top:20px}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;text-align:center}.avatar{justify-self:center}}
   </style>
 </head>
 <body>
@@ -151,94 +57,103 @@
       </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero-card hero">
       <div>
         <h1>Hi, I'm <span style="color:var(--accent)">Aishwarya S</span></h1>
-        <p><b>Your AI Partner for Smarter Decisions, Faster Solutions, and Scalable Innovation.</b></p>
-        <p>Aspiring Software Developer with strong foundations in Java, C, Web Technologies (HTML, CSS, JavaScript) and skilled in UI/UX design. Passionate about problem-solving and eager to contribute to building scalable applications while continuously learning new technologies in a collaborative environment.</p>
-        <a href="#projects" class="btn primary">View My Work</a>
-        <a href="https://drive.google.com/file/d/16jPyUNWAGuROi4xnHQ3YJVnV6XNN5vli/view?usp=drivesdk" target="_blank" class="btn secondary">View Resume</a>
+        <p style="color:var(--muted)"><strong>Your AI Partner for Smarter Decisions, Faster Solutions, and Scalable Innovation.</strong></p>
+        <p style="color:var(--muted)">Aspiring Software Developer with strong foundations in Java, C, Web Technologies (HTML, CSS, JavaScript) and skilled in UI/UX design. Passionate about problem-solving and eager to contribute to building scalable applications while continuously learning new technologies in a collaborative environment.</p>
+        <a class="btn primary" href="#projects">View My Work</a>
+        <a class="btn secondary" href="https://drive.google.com/file/d/16jPyUNWAGuROi4xnHQ3YJVnV6XNN5vli/view?usp=drivesdk" target="_blank">View Resume</a>
       </div>
-      <div class="avatar">
-        <img src="photo.jpg" alt="Aishwarya S">
-      </div>
+
+      <!-- Local photo -->
+      <div class="avatar" id="avatar"><img id="avatarImg" src="AISHWARYA S PHOTO.jpg" alt="Aishwarya S"></div>
     </section>
 
-    <section id="about">
+    <section id="about" class="section-card">
       <div class="section-title"><h3>About Me</h3></div>
-      <p>I'm an aspiring software developer from Trichy, India. I specialize in building efficient and visually appealing applications. I’m passionate about exploring modern technologies and UI/UX design while developing innovative solutions.</p>
+      <p style="color:var(--muted)">I'm an aspiring software developer . I specialize in building efficient and visually appealing applications and enjoy designing user interfaces and experiences.</p>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="section-card">
       <div class="section-title"><h3>Technical Skills</h3></div>
       <div class="skills-grid">
-        <div class="skill-card">
-          <p>Backend (Java, C) — 85%</p>
-          <p>Web Technologies (HTML, CSS, JS) — 80%</p>
-          <p>UI/UX Design — 85%</p>
-          <p>Database & APIs — 75%</p>
+        <div>
+          <p>Backend (Java, C) — <strong>85%</strong></p>
+          <p>Web Technologies (HTML, CSS, JS) — <strong>80%</strong></p>
+          <p>UI/UX Design — <strong>85%</strong></p>
+          <p>Database & APIs — <strong>75%</strong></p>
         </div>
-        <div class="skill-card">
-          <p><b>Tags:</b> Java, C, HTML, CSS, JavaScript, Figma, Canva, MySQL, Git, VS Code</p>
+        <div>
+          <p style="color:var(--muted)"><strong>Tools:</strong> Java, C, HTML, CSS, JavaScript, Figma, Canva, MySQL, Git, VS Code</p>
         </div>
       </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="section-card">
       <div class="section-title"><h3>Projects</h3></div>
       <div class="projects-grid">
-        <div class="project">
-          <h4>A Page About Cats</h4>
-          <p>Responsive HTML page showcasing the history, companionship, and benefits of cats.</p>
-          <p><b>Tech:</b> HTML, CSS</p>
-          <a href="https://github.com/aiva-11/Cat-quote" target="_blank" class="btn secondary">Source Code</a>
+        <div class="project" data-title="A page about cats" data-desc="I've created a responsive HTML page showcasing the history, companionship, and benefits of cats. The page is designed to look great on any device." data-tags="HTML5, CSS" data-src="https://github.com/aiva-11/Cat-quote">
+          <h4>A page about cats</h4>
+          <p style="color:var(--muted)">Responsive HTML page showcasing the history, companionship, and benefits of cats.</p>
         </div>
 
-        <div class="project">
+        <div class="project" data-title="Student Result Management System" data-desc="Console-based Java app with Admin and Student modules to add, update, view and display student marks and grades." data-tags="Core Java" data-src="https://github.com/aiva-11/Student-Result-Management-System-Java-">
           <h4>Student Result Management System</h4>
-          <p>Console-based Java app with Admin and Student modules to manage marks and grades.</p>
-          <p><b>Tech:</b> Core Java</p>
-          <a href="https://github.com/aiva-11/Student-Result-Management-System-Java-" target="_blank" class="btn secondary">Source Code</a>
+          <p style="color:var(--muted)">Console-based Java app with admin and student modules to manage marks and grades.</p>
         </div>
 
-        <div class="project">
+        <div class="project" data-title="Hotel Booking System" data-desc="Room booking, cancellation, and payment calculation with customer record storage in text files using C structures." data-tags="C, Data Structures" data-src="https://github.com/aiva-11/Hotel-Booking-System-">
           <h4>Hotel Booking System</h4>
-          <p>Room booking, cancellation, and payment system with file-based storage in C.</p>
-          <p><b>Tech:</b> C, Data Structures</p>
-          <a href="https://github.com/aiva-11/Hotel-Booking-System-" target="_blank" class="btn secondary">Source Code</a>
+          <p style="color:var(--muted)">Room booking, cancellation, and payment calculation using C structures and file storage.</p>
         </div>
       </div>
     </section>
 
-    <section id="certs">
+    <section id="certs" class="section-card">
       <div class="section-title"><h3>Certifications</h3></div>
       <div class="cert-grid">
-        <div class="cert"><img src="https://drive.google.com/uc?export=view&id=1oviHrPskDnidlUUdW_Xd-L-s4cUlfdiO" alt="Programming Languages Certificate"></div>
-        <div class="cert"><img src="https://drive.google.com/uc?export=view&id=1SIXF-T9crrcu6tbEUxH5wuE3mH9-5Iyx" alt="Web Development Certificate"></div>
-        <div class="cert"><img src="https://drive.google.com/uc?export=view&id=1rhlbuO2RyfClMJHKsFqbIHKizfXPfNB2" alt="Database Management Certificate"></div>
-        <div class="cert"><img src="https://drive.google.com/uc?export=view&id=1_3exs1BtRFNvNjT_bLjGM4oOMFebQ1aF" alt="Cyber Security Certificate"></div>
-        <div class="cert"><img src="https://drive.google.com/uc?export=view&id=1Y5NwPo7xMYrwIgRxc50Qi_ClBBuA9WIz" alt="IoT & Embedded Systems Certificate"></div>
+        <div class="cert"><img src="cert-prog.jpg" alt="Programming Languages Certificate"></div>
+        <div class="cert"><img src="cert.uiux.jpg" alt="UI/UX Design Certificate"></div>
+        <div class="cert"><img src="cert.web.jpg" alt="Web Development Certificate"></div>
+        <div class="cert"><img src="cert.database.jpg" alt="Database Management Certificate"></div>
+        <div class="cert"><img src="cert.cyber.jpg" alt="Cyber Security Certificate"></div>
+        <div class="cert"><img src="cert.IoT.jpg" alt="IoT & Embedded Systems Certificate"></div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="section-card">
       <div class="section-title"><h3>Contact</h3></div>
-      <p>Email: <a href="mailto:aiva02400@gmail.com" style="color:var(--accent)">aiva02400@gmail.com</a></p>
-      <p>Phone: <a href="tel:+917598154244" style="color:var(--accent)">+91 75981 54244</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/aishwarya-srinivasabalaji-227b32257" style="color:var(--accent)">Profile</a></p>
-      <p>GitHub: <a href="https://github.com/aiva-11" style="color:var(--accent)">@aiva-11</a></p>
-      <p>Location: Trichy, India • Open to Opportunities</p>
+      <p style="color:var(--muted)">Email: <a href="mailto:aiva02400@gmail.com" style="color:var(--accent)">aiva02400@gmail.com</a> • Phone: <a href="tel:+917598154244" style="color:var(--accent)">+91 75981 54244</a></p>
+      <p style="color:var(--muted)">Location: Trichy, India • Open to opportunities</p>
     </section>
 
     <footer>
-      © 2025 AISHWARYA S • Built with 💙 Passion & Code
+      <p>© 2025 AISHWARYA S • Built with ❤️</p>
     </footer>
   </div>
+
+  <!-- Image Modal -->
+  <div class="img-modal" id="imgModal">
+    <button class="close-btn" id="closeImg">✕</button>
+    <img id="modalImg" src="" alt="certificate view">
+  </div>
+
+  <script>
+    // Show certificates in full screen
+    document.querySelectorAll('.cert img').forEach(img => {
+      img.addEventListener('click', () => {
+        document.getElementById('modalImg').src = img.src;
+        document.getElementById('imgModal').classList.add('show');
+      });
+    });
+    document.getElementById('closeImg').addEventListener('click', () => {
+      document.getElementById('imgModal').classList.remove('show');
+    });
+    document.getElementById('imgModal').addEventListener('click', (e) => {
+      if (e.target.id === 'imgModal') document.getElementById('imgModal').classList.remove('show');
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
 
