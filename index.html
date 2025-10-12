@@ -75,7 +75,7 @@
       top:18px;
       background:var(--accent);
       color:#021024;
-      font-weight:900; /* made bolder */
+      font-weight:900;
       padding:6px 10px;
       border-radius:8px;
       font-size:13px;
@@ -90,12 +90,27 @@
       color:#fff;
       margin:0 0 6px;
       font-size:16px;
-      font-weight:800; /* made degree titles bolder as requested */
+      font-weight:800;
     }
     .edu-meta{
       color:var(--muted);
       font-size:14px;
       line-height:1.5;
+    }
+
+    /* Highlight marks in Education */
+    .edu-meta .mark{
+      color: var(--accent);
+      font-weight: 800;
+      background: linear-gradient(90deg, rgba(110,168,255,0.06), transparent);
+      padding: 2px 6px;
+      border-radius: 6px;
+      display: inline-block;
+      animation: markIn .6s ease both;
+    }
+    @keyframes markIn{
+      from{opacity:0; transform: translateY(6px) scale(.98)}
+      to{opacity:1; transform: translateY(0) scale(1)}
     }
 
     /* Projects polished styling (kept basic from original) */
@@ -288,17 +303,17 @@
       </div>
     </section>
 
-    <!-- Education (updated: bold years and percentages) -->
+    <!-- Education (marks highlighted) -->
     <section id="education" class="section" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
       <h3>Education</h3>
       <div class="card">
         <div class="edu-timeline">
           <div class="edu-item" data-aos="zoom-in" data-aos-duration="700">
             <div class="edu-badge">2026</div>
-            <h4 class="edu-title"><strong>Bachelor of Engineering</strong> — Electronics & Communication</h4>
+            <h4 class="edu-title"><strong>Bachelor of Engineering</strong> — Electronics &amp; Communication</h4>
             <div class="edu-meta">
               K. Ramakrishnan College of Engineering<br>
-              CGPA: <strong>8.22 / 10</strong> (till 6th semester)
+              CGPA: <span class="mark">8.22 / 10</span> (till 6th semester)
             </div>
           </div>
 
@@ -307,7 +322,7 @@
             <h4 class="edu-title"><strong>Higher Secondary School</strong></h4>
             <div class="edu-meta">
               Sri Jayendhra Matriculation Higher Secondary School<br>
-              Percentage: <strong>69.5%</strong>
+              Percentage: <span class="mark">69.5%</span>
             </div>
           </div>
 
@@ -316,14 +331,14 @@
             <h4 class="edu-title"><strong>Secondary School</strong></h4>
             <div class="edu-meta">
               Sri Sankara Matriculation School<br>
-              Percentage: <strong>77.6%</strong>
+              Percentage: <span class="mark">77.6%</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills (Clean & Professional Version — as requested) -->
+    <!-- Skills (Clean & Professional Version — without icons) -->
     <section id="skills" class="section" data-aos="fade-up" data-aos-duration="700" data-aos-delay="160">
       <h3>Skills</h3>
       <div class="card">
@@ -369,7 +384,7 @@
             <h4>A Page About Cats</h4>
             <p class="desc">Responsive page showcasing the history, companionship, and benefits of cats in a clean, mobile-first layout.</p>
             <div class="tools-line">
-              <span class="tools-label"> Tools & Languages Used:</span>
+              <span class="tools-label">Tools & Languages Used:</span>
               <span class="tools-list">HTML • CSS</span>
             </div>
           </div>
@@ -383,7 +398,7 @@
             <h4>Student Result Management System</h4>
             <p class="desc">Console application with Admin & Student modules to manage and view results with file-based storage.</p>
             <div class="tools-line">
-              <span class="tools-label"> Tools & Languages Used:</span>
+              <span class="tools-label">Tools & Languages Used:</span>
               <span class="tools-list">Java • OOP • File Handling</span>
             </div>
           </div>
@@ -397,7 +412,7 @@
             <h4>FreshBite</h4>
             <p class="desc">Figma prototype demonstrating a user-focused meal delivery experience with attention to usability and flow.</p>
             <div class="tools-line">
-              <span class="tools-label"> Tools & Languages Used:</span>
+              <span class="tools-label">Tools & Languages Used:</span>
               <span class="tools-list">Figma • UI/UX Design</span>
             </div>
           </div>
@@ -411,7 +426,7 @@
             <h4>Hotel Booking System</h4>
             <p class="desc">Simple booking system featuring room management, cancellations, and payment calculations using C structures.</p>
             <div class="tools-line">
-              <span class="tools-label"> Tools & Languages Used:</span>
+              <span class="tools-label">Tools & Languages Used:</span>
               <span class="tools-list">C • Structures • File I/O</span>
             </div>
           </div>
@@ -651,6 +666,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
