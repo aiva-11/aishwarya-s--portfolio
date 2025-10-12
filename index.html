@@ -40,124 +40,112 @@
     .skill{display:flex;align-items:center;gap:10px;color:var(--muted);padding:6px 0}
     .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(90deg,var(--accent),#9ed4ff)}
 
-    /* Education */
-    .edu-list{display:flex;flex-direction:column;gap:12px}
-    .edu-item{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:12px}
-    .edu-item h4{margin:0 0 6px;color:#fff;font-size:16px}
-    .edu-meta{color:var(--muted);font-size:14px;line-height:1.4}
+    /* Education timeline and glow effect styling */
+    .edu-timeline{
+      position:relative;
+      margin-top:16px;
+      padding-left:22px;
+    }
+    .edu-timeline::before{
+      content:'';
+      position:absolute;
+      left:10px;
+      top:10px;
+      bottom:10px;
+      width:2px;
+      background:linear-gradient(180deg,rgba(110,168,255,0.25),rgba(155,212,255,0.05));
+      border-radius:2px;
+    }
+    .edu-item{
+      position:relative;
+      margin-bottom:14px;
+      padding:16px 18px 16px 32px;
+      border-radius:14px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      box-shadow:0 12px 28px rgba(2,6,23,0.45);
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+    .edu-item:hover{
+      transform:translateY(-6px);
+      box-shadow:0 24px 48px rgba(2,6,23,0.6);
+    }
+    .edu-badge{
+      position:absolute;
+      left:-8px;
+      top:18px;
+      background:var(--accent);
+      color:#021024;
+      font-weight:700;
+      padding:6px 10px;
+      border-radius:8px;
+      font-size:13px;
+      box-shadow:0 6px 16px rgba(14,36,51,0.35);
+      transition: box-shadow .3s ease, background .3s ease;
+    }
+    .edu-badge:hover{
+      background: #9ed4ff;
+      box-shadow: 0 8px 24px rgba(110,168,255,0.6);
+    }
+    .edu-title{
+      color:#fff;
+      margin:0 0 6px;
+      font-size:16px;
+      font-weight:700;
+    }
+    .edu-meta{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+    }
 
-    /* === Projects: BIG style === */
-    .projects-grid{
+    /* Projects polished styling */
+    .project-grid-polished{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
-      gap:28px;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:26px;
       margin-top:18px;
       align-items:start;
     }
-    .project{
+    .project-polished{
       background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      padding:28px;
-      border-radius:16px;
-      box-shadow:0 18px 40px rgba(2,6,23,0.6);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height:260px;
-    }
-    .project h4{
-      margin:0 0 10px;
-      color:#fff;
-      font-size:22px;
-      letter-spacing:0.2px;
-    }
-    .project .desc{
-      margin:0;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.6;
-    }
-    .project .tools-line{
-      margin-top:16px;
-      font-size:18px;
-      font-weight:800;
-      color:var(--accent);
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-    }
-    .project .tools-label{font-size:18px;margin-right:8px}
-    .project .tools-list{
-      background:linear-gradient(90deg,#0e2433,rgba(255,255,255,0.02));
-      padding:10px 12px;
-      border-radius:12px;
-      color:#fff;
-      font-weight:800;
-      display:inline-block;
-      font-size:16px;
-    }
-    .project .actions{margin-top:18px}
-    .project .actions .btn{padding:12px 16px;font-weight:800;border-radius:12px}
-
-    /* === Certificates: bigger cards, normal caption style === */
-    .cert-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-      margin-top:12px;
-      align-items:start;
-    }
-    .cert{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      padding:14px;
+      padding:20px;
       border-radius:14px;
-      box-shadow:0 12px 30px rgba(2,6,23,0.5);
-      text-align:center;
-      min-height:260px;
+      box-shadow:0 16px 36px rgba(2,6,23,0.55);
       display:flex;
       flex-direction:column;
-      align-items:center;
-      justify-content:flex-start;
       gap:12px;
+      min-height:220px;
+      transition:transform .28s ease, box-shadow .28s ease;
     }
-    .cert img{
-      width:100%;
-      height:180px;
-      object-fit:cover;
-      border-radius:10px;
-      cursor:pointer;
-      box-shadow:0 8px 20px rgba(0,0,0,0.5);
+    .project-polished:hover{
+      transform:translateY(-6px);
+      box-shadow:0 24px 60px rgba(2,6,23,0.65);
     }
-    .ribbon{position:absolute;left:14px;top:14px;padding:6px 8px;border-radius:8px;font-weight:700;font-size:12px;color:#061218}
-    .ribbon.gold{background:linear-gradient(90deg,#f5b84b,#ffdd7a)}
-    .ribbon.blue{background:linear-gradient(90deg,#6ea8ff,#9bd4ff)}
-    .ribbon.green{background:linear-gradient(90deg,#6fffb0,#9ef7cd)}
-    .ribbon.red{background:linear-gradient(90deg,#ff9aa2,#ffb4bd)}
-    .ribbon.gray{background:linear-gradient(90deg,#d7dfe6,#f0f4f8)}
-    .caption{
-      margin-top:4px;
-      font-size:15px;
-      color:var(--muted);
-      text-align:center;
-      font-style:normal;
-      font-weight:400;
-      line-height:1.4;
+    .project-head{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
     }
-    .caption small{display:block;color:var(--muted);font-size:13px;margin-top:6px}
-
-    /* Contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
-    .contact-info{padding:12px}
-    .form-field{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:var(--glass);color:#fff;font-size:15px}
-    .form-note{font-size:13px;color:var(--muted);margin-top:6px}
-    .feedback{margin-top:10px;font-weight:700}
-    .feedback.success{color:#b7f5c9}
-    .feedback.error{color:#ffb3b8}
-
-    .img-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.78);z-index:120}
-    .img-modal.show{display:flex}
-    .img-modal img{max-width:95%;max-height:85vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
-    footer{color:var(--muted);text-align:center;margin-top:28px}
+    .project-thumb{
+      width:84px;height:62px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);
+      flex:0 0 84px;background:#05121a;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;
+    }
+    .project-meta{flex:1}
+    .project-meta h4{margin:0;color:#fff;font-size:18px}
+    .project-meta p.lead{margin:6px 0;color:var(--muted);font-size:14px;line-height:1.5}
+    .tools-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .chip{
+      padding:6px 10px;
+      border-radius:999px;
+      background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);
+      font-weight:700;
+      font-size:13px;
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .project-actions{margin-top:auto;display:flex;gap:10px;align-items:center}
+    .btn.ghost{background:transparent;border:1px solid rgba(110,168,255,0.12);color:var(--accent);}
+    @media(max-width:760px){ .project-thumb{display:none} }
 
     @media(max-width:1100px){
       .projects-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
@@ -200,7 +188,6 @@
       <div>
         <h1 id="hero-heading">Hi — I'm <span style="color:var(--accent)">Aishwarya</span></h1>
 
-        <!-- TAGLINE -->
         <h2 style="margin:8px 0;color:var(--muted);font-weight:600">
           Crafting digital and embedded experiences with logic, creativity, and code.
         </h2>
@@ -211,7 +198,6 @@
 
         <p style="margin-top:14px">
           <a class="btn primary" href="#projects">View My Work</a>
-          <!-- View-only resume: opens drive PDF in new tab (view-only) -->
           <a class="btn" href="https://drive.google.com/uc?export=view&id=16jPyUNWAGuROi4xnHQ3YJVnV6XNN5vli" target="_blank" rel="noopener" style="border:1px solid rgba(110,168,255,0.12);color:var(--accent);background:transparent">View My Resume</a>
           <a class="btn" href="#contact" style="border:1px solid rgba(110,168,255,0.12);color:var(--accent);background:transparent">Contact Me</a>
         </p>
@@ -239,29 +225,31 @@
     <section id="education" class="section" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
       <h3>Education</h3>
       <div class="card">
-        <div class="edu-list">
-          <div class="edu-item" data-aos="fade-up" data-aos-duration="700">
-            <h4>Bachelor Of Engineering (2026)</h4>
+        <div class="edu-timeline">
+          <div class="edu-item" data-aos="zoom-in" data-aos-duration="700">
+            <div class="edu-badge">2026</div>
+            <h4 class="edu-title">Bachelor of Engineering — Electronics & Communication</h4>
             <div class="edu-meta">
-              Electronics &amp; Communication<br>
               K. Ramakrishnan College of Engineering<br>
-              CGPA: 8.22 / 10 (till 6th semester)
+              CGPA: <strong>8.22 / 10</strong> (till 6th semester)
             </div>
           </div>
 
-          <div class="edu-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="40">
-            <h4>Higher Secondary School (2022)</h4>
+          <div class="edu-item" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="60">
+            <div class="edu-badge">2022</div>
+            <h4 class="edu-title">Higher Secondary School</h4>
             <div class="edu-meta">
               Sri Jayendhra Matriculation Higher Secondary School<br>
-              Percentage: 69.5%
+              Percentage: <strong>69.5%</strong>
             </div>
           </div>
 
-          <div class="edu-item" data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
-            <h4>Secondary School (2020)</h4>
+          <div class="edu-item" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="120">
+            <div class="edu-badge">2020</div>
+            <h4 class="edu-title">Secondary School</h4>
             <div class="edu-meta">
               Sri Sankara Matriculation School<br>
-              Percentage: 77.6%
+              Percentage: <strong>77.6%</strong>
             </div>
           </div>
         </div>
@@ -274,90 +262,35 @@
       <div class="card">
         <div class="skills-grid">
           <div>
-            <div class="skill"><span class="dot"></span> Backend (Java, C)</div>
-            <div class="skill"><span class="dot"></span> Web Technologies (HTML, CSS, JS)</div>
-            <div class="skill"><span class="dot"></span> UI/UX Design</div>
-            <div class="skill"><span class="dot"></span> Database (SQL)</div>
-            <div class="skill"><span class="dot"></span> Embedded Systems (C, Arduino, STM32, IoT)</div>
-            <div class="skill"><span class="dot"></span> Tools & Platforms (VS Code, Canva, Figma, Git, GitHub, Photoshop)</div>
+            <h4 style="color:var(--accent);font-size:16px;font-weight:600;opacity:0.9;margin-bottom:6px;">Programming Languages</h4>
+            <div class="skill"><span class="dot"></span> Java • C • C++ • Python • JavaScript</div>
+
+            <h4 style="color:var(--accent);font-size:16px;font-weight:600;opacity:0.9;margin:14px 0 6px;">Web Development</h4>
+            <div class="skill"><span class="dot"></span> HTML5 • CSS3 • JavaScript (ES6+)</div>
+            <div class="skill"><span class="dot"></span> React • Node.js • Express</div>
+            <div class="skill"><span class="dot"></span> SQL (MySQL) • Firebase</div>
+
+            <h4 style="color:var(--accent);font-size:16px;font-weight:600;opacity:0.9;margin:14px 0 6px;">Tools & Platforms</h4>
+            <div class="skill"><span class="dot"></span> VS Code • Git • GitHub • PlatformIO • Proteus</div>
           </div>
+
           <div>
-            <div class="skill"><span class="dot"></span> Problem Solving</div>
-            <div class="skill"><span class="dot"></span> Creativity & Innovation</div>
-            <div class="skill"><span class="dot"></span> Communication</div>
-            <div class="skill"><span class="dot"></span> Leadership</div>
-            <div class="skill"><span class="dot"></span> Teamwork & Collaboration</div>
-            <div class="skill"><span class="dot"></span> Adaptability</div>
+            <h4 style="color:var(--accent);font-size:16px;font-weight:600;opacity:0.9;margin-bottom:6px;">Embedded Systems & IoT</h4>
+            <div class="skill"><span class="dot"></span> Arduino • STM32 • Sensors (DHT, Ultrasonic)</div>
+            <div class="skill"><span class="dot"></span> Communication Interfaces — Serial/UART • SPI • I2C</div>
+
+            <h4 style="color:var(--accent);font-size:16px;font-weight:600;opacity:0.9;margin:14px 0 6px;">RTOS & Microcontrollers</h4>
+            <div class="skill"><span class="dot"></span> FreeRTOS (basics) • STM32CubeIDE • Keil</div>
+
+            <h4 style="color:var(--accent);font-size:16px;font-weight:600;opacity:0.9;margin:14px 0 6px;">UI/UX Design</h4>
+            <div class="skill"><span class="dot"></span> Figma • Canva • Photoshop</div>
+            <div class="skill"><span class="dot"></span> Wireframing • Prototyping • User Interface Design</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects (BIG cards) -->
-    <section id="projects" class="section" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-      <h3>Projects</h3>
-      <div class="projects-grid">
-
-        <div class="project card" data-aos="fade-up" data-aos-duration="750">
-          <div>
-            <h4>A Page About Cats</h4>
-            <p class="desc">Responsive page showcasing the history, companionship, and benefits of cats in a clean, mobile-first layout.</p>
-            <div class="tools-line">
-              <span class="tools-label">🧰 Tools & Languages Used:</span>
-              <span class="tools-list">HTML • CSS</span>
-            </div>
-          </div>
-          <div class="actions">
-            <a class="btn" href="https://github.com/aiva-11/Cat-quote" target="_blank" rel="noopener">View Code</a>
-          </div>
-        </div>
-
-        <div class="project card" data-aos="fade-up" data-aos-duration="750" data-aos-delay="60">
-          <div>
-            <h4>Student Result Management System</h4>
-            <p class="desc">Console application with Admin & Student modules to manage and view results with file-based storage.</p>
-            <div class="tools-line">
-              <span class="tools-label">🧰 Tools & Languages Used:</span>
-              <span class="tools-list">Java • OOP • File Handling</span>
-            </div>
-          </div>
-          <div class="actions">
-            <a class="btn" href="https://github.com/aiva-11/Student-Result-Management-System-Java-" target="_blank" rel="noopener">View Code</a>
-          </div>
-        </div>
-
-        <div class="project card" data-aos="fade-up" data-aos-duration="750" data-aos-delay="120">
-          <div>
-            <h4>FreshBite</h4>
-            <p class="desc">Figma prototype demonstrating a user-focused meal delivery experience with attention to usability and flow.</p>
-            <div class="tools-line">
-              <span class="tools-label">🧰 Tools & Languages Used:</span>
-              <span class="tools-list">Figma • UI/UX Design</span>
-            </div>
-          </div>
-          <div class="actions">
-            <a class="btn" href="https://github.com/aiva-11/FreshBite-" target="_blank" rel="noopener">View Prototype</a>
-          </div>
-        </div>
-
-        <div class="project card" data-aos="fade-up" data-aos-duration="750" data-aos-delay="180">
-          <div>
-            <h4>Hotel Booking System</h4>
-            <p class="desc">Simple booking system featuring room management, cancellations, and payment calculations using C structures.</p>
-            <div class="tools-line">
-              <span class="tools-label">🧰 Tools & Languages Used:</span>
-              <span class="tools-list">C • Structures • File I/O</span>
-            </div>
-          </div>
-          <div class="actions">
-            <a class="btn" href="https://github.com/aiva-11/Hotel-Booking-System-" target="_blank" rel="noopener">View Code</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Certifications (big previews + normal caption font) -->
+    <!-- Certifications (unchanged) -->
     <section id="certs" class="section" data-aos="fade-up" data-aos-duration="700" data-aos-delay="240">
       <h3>Certifications</h3>
       <div class="cert-grid">
@@ -415,7 +348,7 @@
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact (unchanged) -->
     <section id="contact" class="section" aria-labelledby="contact-heading" data-aos="fade-up" data-aos-duration="700" data-aos-delay="280">
       <h3 id="contact-heading">Contact</h3>
 
@@ -445,14 +378,12 @@
 
               <div id="form-note" class="form-note">Prefer direct contact? Email me at <a href="mailto:aiva02400@gmail.com" style="color:var(--accent)">aiva02400@gmail.com</a> or call <a href="tel:+917598154244" style="color:var(--accent)">+91 75981 54244</a>.</div>
 
-              <!-- Contact section View-only resume button (no download) -->
               <div style="margin-top:8px">
                 <a class="btn" href="https://drive.google.com/uc?export=view&id=16jPyUNWAGuROi4xnHQ3YJVnV6XNN5vli" target="_blank" rel="noopener" style="padding:10px 12px;border-radius:10px;border:1px solid rgba(110,168,255,0.12);color:var(--accent);background:transparent">View My Resume</a>
               </div>
             </form>
           </div>
 
-          <!-- Right: contact info -->
           <aside class="contact-info" aria-label="Contact details">
             <div style="font-weight:800;font-size:16px;margin-bottom:6px">Get in touch</div>
             <p class="muted" style="margin-top:0">
@@ -495,7 +426,7 @@
     // year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Initialize AOS (scroll animations)
+    // AOS init
     AOS.init({
       duration: 800,
       once: true,
@@ -510,27 +441,30 @@
       });
     });
     document.getElementById('closeImg').addEventListener('click', () => document.getElementById('imgModal').classList.remove('show'));
-    document.getElementById('imgModal').addEventListener('click', (e) => { if (e.target.id === 'imgModal') document.getElementById('imgModal').classList.remove('show'); });
+    document.getElementById('imgModal').addEventListener('click', (e) => {
+      if (e.target.id === 'imgModal') document.getElementById('imgModal').classList.remove('show');
+    });
 
-    // smooth scroll for internal links
+    // smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
         const href = a.getAttribute('href');
-        if (href.length > 1) { e.preventDefault(); document.querySelector(href).scrollIntoView({behavior:'smooth'}); }
+        if (href.length > 1) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+        }
       });
     });
 
-    // Contact form handling using Formspree fetch (AJAX) with graceful fallback
+    // form handling (Formspree)
     (function(){
       const form = document.getElementById('contactForm');
       const sendBtn = document.getElementById('sendBtn');
       const clearBtn = document.getElementById('clearBtn');
       const feedback = document.getElementById('formFeedback');
 
-      // Replace this with your Formspree endpoint (or another endpoint)
       const FORMSPREE_ENDPOINT = 'https://formspree.io/f/your-form-id';
 
-      // Clear form
       clearBtn.addEventListener('click', () => {
         form.reset();
         feedback.textContent = '';
@@ -586,6 +520,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
