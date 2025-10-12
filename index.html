@@ -5,72 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aishwarya Srinivasabalaji — Portfolio</title>
   <meta name="description" content="Aishwarya Srinivasabalaji — Aspiring Software Developer (UI/UX & Embedded Systems)" />
+  <!-- Google Fonts: Poppins (headings) + Inter (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg: linear-gradient(180deg,#07101a,#07121b);
-      --card: rgba(15,26,39,0.88);
+      --card: rgba(15,26,39,0.94);
       --accent: #6ea8ff;
       --muted: #98a0b3;
       --glass: rgba(255,255,255,0.03);
+      --glass-2: rgba(255,255,255,0.02);
+      --radius: 14px;
     }
+
+    /* Reset & base */
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,color-scheme: dark;color:#e6eef8;background:var(--bg)}
-    .container{max-width:1100px;margin:32px auto;padding:22px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo-badge{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#8b5cf6);display:flex;align-items:center;justify-content:center;color:#021024;font-weight:800}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto;color:#e6eef8;background:var(--bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    a{color:inherit}
+    .container{max-width:1200px;margin:28px auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo-badge{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#8b5cf6);display:flex;align-items:center;justify-content:center;color:#021024;font-weight:800;font-family:Poppins, sans-serif;font-size:18px;letter-spacing:0.6px}
+    .brand-name{font-family:Poppins, sans-serif;font-weight:700}
     nav{display:flex;gap:12px}
-    nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px;border-radius:8px}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:10px;font-family:Inter}
     nav a:hover{color:#fff;background:var(--glass)}
-    .hero{display:grid;grid-template-columns:1fr 260px;gap:24px;align-items:center}
-    .card{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
-    h1{margin:0;font-size:28px}
-    .muted{color:var(--muted);line-height:1.6}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;margin-right:8px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:center}
+    .card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:0 14px 40px rgba(2,6,23,0.6)}
+    h1{margin:0;font-family:Poppins, sans-serif;font-weight:800;font-size:34px}
+    h2{margin:8px 0;color:var(--muted);font-weight:600;font-family:Inter}
+    .muted{color:var(--muted);line-height:1.7}
+    .btn{display:inline-block;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700;margin-right:8px;font-family:Poppins}
     .btn.primary{background:linear-gradient(90deg,var(--accent),#7bd0ff);color:#012033}
-    .avatar{width:220px;height:220px;border-radius:18px;overflow:hidden;border:4px solid rgba(255,255,255,0.06);justify-self:end}
+    .avatar{width:320px;height:320px;border-radius:18px;overflow:hidden;border:4px solid rgba(255,255,255,0.06);justify-self:end}
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .section{margin-top:24px}
-    .section h3{color:var(--accent);margin:0 0 12px}
-    .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .skill{display:flex;align-items:center;gap:10px;color:var(--muted);padding:6px 0}
-    .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(90deg,var(--accent),#9ed4ff)}
-    /* Projects */
-    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:12px}
-    .project{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.5);display:flex;flex-direction:column;justify-content:space-between;min-height:210px}
-    .project h4{margin:0 0 6px;color:#fff;font-size:18px}
-    .project .desc{margin:0;color:var(--muted);font-size:14px}
-    .project .tools-line{margin-top:12px;font-size:16px;font-weight:800;color:var(--accent);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-    .project .tools-label{font-size:16px;margin-right:6px}
-    .project .tools-list{background:linear-gradient(90deg,#0e2433,rgba(255,255,255,0.02));padding:8px 10px;border-radius:10px;color:#fff;font-weight:700;display:inline-block;font-size:15px}
-    .project .actions{margin-top:14px}
+
+    /* Sections */
+    .section{margin-top:30px}
+    .section h3{color:var(--accent);margin:0 0 12px;font-family:Poppins;font-weight:700}
+
+    /* Skills - colorful badges */
+    .skills-wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-start;align-items:center}
+    .skill-badge{
+      padding:10px 18px;border-radius:999px;font-weight:700;font-family:Poppins;font-size:14px;color:#021024;
+      box-shadow:0 6px 18px rgba(2,6,23,0.45);
+    }
+    /* individual gradients (feel free to reorder) */
+    .g-1{background:linear-gradient(90deg,#00c6ff,#0072ff);color:#fff}
+    .g-2{background:linear-gradient(90deg,#ff9966,#ff5e62);color:#fff}
+    .g-3{background:linear-gradient(90deg,#ff7eb3,#ff758c);color:#fff}
+    .g-4{background:linear-gradient(90deg,#56ccf2,#2f80ed);color:#fff}
+    .g-5{background:linear-gradient(90deg,#f7df1e,#fbb034);color:#000}
+    .g-6{background:linear-gradient(90deg,#a18cd1,#fbc2eb);color:#fff}
+    .g-7{background:linear-gradient(90deg,#43cea2,#185a9d);color:#fff}
+    .g-8{background:linear-gradient(90deg,#667eea,#764ba2);color:#fff}
+    .g-9{background:linear-gradient(90deg,#00c9ff,#92fe9d);color:#021024}
+    .g-10{background:linear-gradient(90deg,#f7971e,#ffd200);color:#021024}
+    .g-11{background:linear-gradient(90deg,#fc466b,#3f5efb);color:#fff}
+    .g-12{background:linear-gradient(90deg,#8e2de2,#4a00e0);color:#fff}
+    .g-13{background:linear-gradient(90deg,#00b09b,#96c93d);color:#021024}
+    .g-14{background:linear-gradient(90deg,#232526,#414345);color:#fff}
+    .g-15{background:linear-gradient(90deg,#e96443,#904e95);color:#fff}
+
+    /* Projects: big style */
+    .projects-grid{display:grid;grid-template-columns:1fr;gap:22px;margin-top:14px}
+    /* for wider screens show 2 columns */
+    @media(min-width:980px){ .projects-grid{grid-template-columns:repeat(2,1fr)} }
+
+    .project-large{
+      display:flex;gap:18px;align-items:stretch;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);
+      border-radius:18px;padding:20px;min-height:220px;box-shadow:0 10px 30px rgba(2,6,23,0.5);
+    }
+    .project-media{flex:0 0 260px;border-radius:12px;overflow:hidden;background:var(--glass-2);display:flex;align-items:center;justify-content:center}
+    .project-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .project-body{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:6px 4px}
+    .project-title{font-family:Poppins;font-weight:800;font-size:22px;margin:0 0 8px;color:#fff}
+    .project-desc{color:var(--muted);font-size:15px;margin:0}
+    .project-tools{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+    .project-tools .label{font-weight:800;color:var(--accent);font-family:Poppins;margin-right:8px}
+    .tech-pill{padding:8px 12px;border-radius:12px;background:rgba(255,255,255,0.03);font-weight:700;color:#fff;font-family:Inter;font-size:14px}
+    .project-actions{margin-top:16px;display:flex;gap:10px;align-items:center}
+
+    /* Certificates - big thumbnails */
+    .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:12px}
+    @media(min-width:980px){ .cert-grid{grid-template-columns:repeat(4,1fr)} }
+    .cert-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px;padding:12px;display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:transform .28s,box-shadow .28s}
+    .cert-card img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+    .cert-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.55)}
+    .cert-caption{margin-top:10px;font-size:14px;color:var(--muted);text-align:center}
+
+    /* Image modal (for certificates) */
+    .img-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.78);z-index:120;padding:28px}
+    .img-modal.show{display:flex}
+    .img-modal img{max-width:95%;max-height:85vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,0.7)}
+
     /* Contact */
     .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
-    .contact-info{padding:12px}
+    @media(max-width:980px){ .contact-grid{grid-template-columns:1fr} }
     .form-field{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:var(--glass);color:#fff;font-size:15px}
-    .form-row{display:flex;gap:10px}
-    .form-row .form-field{flex:1}
-    .form-note{font-size:13px;color:var(--muted);margin-top:6px}
     .feedback{margin-top:10px;font-weight:700}
     .feedback.success{color:#b7f5c9}
     .feedback.error{color:#ffb3b8}
-    /* Certs */
-    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
-    .cert{position:relative;border-radius:10px;padding:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
-    .cert img{width:100%;height:110px;object-fit:cover;border-radius:8px;cursor:pointer}
-    .ribbon{position:absolute;left:10px;top:8px;padding:6px 8px;border-radius:8px;font-weight:700;font-size:12px;color:#061218}
-    .ribbon.gold{background:linear-gradient(90deg,#f5b84b,#ffdd7a)}
-    .ribbon.blue{background:linear-gradient(90deg,#6ea8ff,#9bd4ff)}
-    .ribbon.green{background:linear-gradient(90deg,#6fffb0,#9ef7cd)}
-    .ribbon.red{background:linear-gradient(90deg,#ff9aa2,#ffb4bd)}
-    .ribbon.gray{background:linear-gradient(90deg,#d7dfe6,#f0f4f8)}
-    .caption{margin-top:8px;font-size:14px;color:var(--muted);text-align:center}
-    .img-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.78);z-index:120}
-    .img-modal.show{display:flex}
-    .img-modal img{max-width:95%;max-height:85vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
-    footer{color:var(--muted);text-align:center;margin-top:28px}
-    @media(max-width:960px){.contact-grid{grid-template-columns:1fr}}
-    @media(max-width:760px){.hero{grid-template-columns:1fr;text-align:center}.avatar{justify-self:center}.logo-badge{display:none}}
+    footer{color:var(--muted);text-align:center;margin-top:36px}
+    /* small tweaks */
+    @media(max-width:760px){ .hero{grid-template-columns:1fr 220px}.avatar{width:220px;height:220px} .project-media{display:none} }
   </style>
 </head>
 <body>
@@ -79,7 +121,7 @@
       <div class="brand">
         <div class="logo-badge">AS</div>
         <div>
-          <div style="font-weight:800">Aishwarya Srinivasabalaji</div>
+          <div class="brand-name">Aishwarya Srinivasabalaji</div>
           <div style="font-size:13px;color:var(--muted)">Aspiring Software Developer • UI/UX & Embedded Systems</div>
         </div>
       </div>
@@ -97,17 +139,17 @@
     <section class="hero card" aria-labelledby="hero-heading">
       <div>
         <h1 id="hero-heading">Hi — I'm <span style="color:var(--accent)">Aishwarya</span></h1>
-        <h2 style="margin:8px 0;color:var(--muted);font-weight:600">Aspiring Software Developer passionate about UI/UX & Embedded Systems</h2>
+        <h2>Aspiring Software Developer passionate about UI/UX & Embedded Systems</h2>
 
-        <p class="muted">I’m an aspiring software developer who blends logic with creativity to build efficient, user-friendly, and visually appealing applications. With strong skills in Java, C, and web technologies like HTML, CSS, and JavaScript, I focus on developing scalable software that enhances user experience. My passion for UI/UX design drives me to create intuitive and accessible interfaces using tools like Figma and Canva. Alongside software development, I explore embedded systems and IoT to understand how software and hardware connect, continuously learning to craft innovative, meaningful digital solutions. I’m deeply motivated by the impact technology can create when paired with thoughtful design and reliable engineering.</p>
+        <p class="muted">I blend logic with creativity to build efficient, user-friendly and visually appealing applications. I work with Java, C, HTML, CSS, JavaScript and also craft UI/UX prototypes with Figma — plus I experiment with embedded systems and microcontrollers.</p>
 
-        <p style="margin-top:14px">
+        <p style="margin-top:16px">
           <a class="btn primary" href="#projects">View My Work</a>
           <a class="btn" href="#contact" style="border:1px solid rgba(110,168,255,0.12);color:var(--accent);background:transparent">Contact Me</a>
         </p>
       </div>
 
-      <div class="avatar card" style="padding:6px;">
+      <div class="avatar card" style="padding:8px;">
         <img src="AISHWARYA S PHOTO.jpg" alt="Aishwarya Srinivasabalaji" />
       </div>
     </section>
@@ -124,152 +166,167 @@
     <section id="skills" class="section">
       <h3>Skills</h3>
       <div class="card">
-        <div class="skills-grid">
-          <div>
-            <div class="skill"><span class="dot"></span> Backend (Java, C)</div>
-            <div class="skill"><span class="dot"></span> Web Technologies (HTML, CSS, JS)</div>
-            <div class="skill"><span class="dot"></span> UI/UX Design</div>
-            <div class="skill"><span class="dot"></span> Database (SQL)</div>
-            <div class="skill"><span class="dot"></span> Embedded Systems (C, Arduino, STM32, IoT)</div>
-            <div class="skill"><span class="dot"></span> Tools & Platforms (VS Code, Canva, Figma, Git, GitHub, Photoshop)</div>
-          </div>
-          <div>
-            <div class="skill"><span class="dot"></span> Problem Solving</div>
-            <div class="skill"><span class="dot"></span> Creativity & Innovation</div>
-            <div class="skill"><span class="dot"></span> Communication</div>
-            <div class="skill"><span class="dot"></span> Leadership</div>
-            <div class="skill"><span class="dot"></span> Teamwork & Collaboration</div>
-            <div class="skill"><span class="dot"></span> Adaptability</div>
+        <div style="margin-top:10px">
+          <div class="skills-wrap">
+            <span class="skill-badge g-1">Java</span>
+            <span class="skill-badge g-2">C Programming</span>
+            <span class="skill-badge g-3">HTML</span>
+            <span class="skill-badge g-4">CSS</span>
+            <span class="skill-badge g-5">JavaScript</span>
+            <span class="skill-badge g-6">UI/UX Design</span>
+            <span class="skill-badge g-7">SQL</span>
+            <span class="skill-badge g-8">Embedded Systems</span>
+            <span class="skill-badge g-9">Arduino</span>
+            <span class="skill-badge g-10">STM32</span>
+            <span class="skill-badge g-11">IoT</span>
+            <span class="skill-badge g-12">Figma</span>
+            <span class="skill-badge g-13">Canva</span>
+            <span class="skill-badge g-14">Git & GitHub</span>
+            <span class="skill-badge g-15">Photoshop</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects (only four projects) -->
+    <!-- Projects (large cards) -->
     <section id="projects" class="section">
       <h3>Projects</h3>
+
       <div class="projects-grid">
 
-        <div class="project card">
-          <div>
-            <h4>A Page About Cats</h4>
-            <p class="desc">Responsive HTML page showcasing the history, companionship, and benefits of cats.</p>
-            <div class="tools-line" aria-hidden="false">
-              <span class="tools-label">🧰 Tools & Languages Used:</span>
-              <span class="tools-list">HTML • CSS</span>
-            </div>
+        <!-- Project 1 -->
+        <article class="project-large card" aria-labelledby="p1">
+          <div class="project-media">
+            <!-- Replace with actual project image -->
+            <img src="proj-cats.jpg" alt="A Page About Cats screenshot">
           </div>
-          <div class="actions">
-            <a class="btn" href="https://github.com/aiva-11/Cat-quote" target="_blank" rel="noopener">View Code</a>
-          </div>
-        </div>
 
-        <div class="project card">
-          <div>
-            <h4>Student Result Management System</h4>
-            <p class="desc">Console-based Java app with Admin and Student modules to add, update, view and display student marks and grades.</p>
-            <div class="tools-line">
-              <span class="tools-label">🧰 Tools & Languages Used:</span>
-              <span class="tools-list">Java • OOP • File Handling</span>
-            </div>
-          </div>
-          <div class="actions">
-            <a class="btn" href="https://github.com/aiva-11/Student-Result-Management-System-Java-" target="_blank" rel="noopener">View Code</a>
-          </div>
-        </div>
+          <div class="project-body">
+            <div>
+              <h4 id="p1" class="project-title">A Page About Cats</h4>
+              <p class="project-desc">Responsive HTML page showcasing the history, companionship, and benefits of cats.</p>
 
-        <div class="project card">
-          <div>
-            <h4>FreshBite</h4>
-            <p class="desc">Interactive Figma prototype for a healthy-meal delivery experience focused on usability.</p>
-            <div class="tools-line">
-              <span class="tools-label">🧰 Tools & Languages Used:</span>
-              <span class="tools-list">Figma • UI/UX Design</span>
+              <div class="project-tools" aria-hidden="false">
+                <div class="label">🧰 Tools & Languages Used:</div>
+                <div class="tech-pill">HTML</div>
+                <div class="tech-pill">CSS</div>
+              </div>
             </div>
-          </div>
-          <div class="actions">
-            <a class="btn" href="https://github.com/aiva-11/FreshBite-" target="_blank" rel="noopener">View Prototype</a>
-          </div>
-        </div>
 
-        <div class="project card">
-          <div>
-            <h4>Hotel Booking System</h4>
-            <p class="desc">Room booking, cancellation, and payment calculation with customer record storage using C structures.</p>
-            <div class="tools-line">
-              <span class="tools-label">🧰 Tools & Languages Used:</span>
-              <span class="tools-list">C • Structures • File I/O</span>
+            <div class="project-actions">
+              <a class="btn" href="https://github.com/aiva-11/Cat-quote" target="_blank" rel="noopener">View Code</a>
             </div>
           </div>
-          <div class="actions">
-            <a class="btn" href="https://github.com/aiva-11/Hotel-Booking-System-" target="_blank" rel="noopener">View Code</a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-large card" aria-labelledby="p2">
+          <div class="project-media">
+            <img src="proj-result.jpg" alt="Student Result Management System screenshot">
           </div>
-        </div>
+
+          <div class="project-body">
+            <div>
+              <h4 id="p2" class="project-title">Student Result Management System</h4>
+              <p class="project-desc">Console-based Java application with Admin and Student modules to add, update, view and display student marks and grades.</p>
+
+              <div class="project-tools">
+                <div class="label">🧰 Tools & Languages Used:</div>
+                <div class="tech-pill">Java</div>
+                <div class="tech-pill">OOP</div>
+                <div class="tech-pill">File Handling</div>
+              </div>
+            </div>
+
+            <div class="project-actions">
+              <a class="btn" href="https://github.com/aiva-11/Student-Result-Management-System-Java-" target="_blank" rel="noopener">View Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-large card" aria-labelledby="p3">
+          <div class="project-media">
+            <img src="proj-freshbite.jpg" alt="FreshBite prototype screenshot">
+          </div>
+
+          <div class="project-body">
+            <div>
+              <h4 id="p3" class="project-title">FreshBite</h4>
+              <p class="project-desc">Interactive Figma prototype for a healthy-meal delivery experience focused on usability and conversion.</p>
+
+              <div class="project-tools">
+                <div class="label">🧰 Tools & Languages Used:</div>
+                <div class="tech-pill">Figma</div>
+                <div class="tech-pill">UI/UX Design</div>
+              </div>
+            </div>
+
+            <div class="project-actions">
+              <a class="btn" href="https://github.com/aiva-11/FreshBite-" target="_blank" rel="noopener">View Prototype</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-large card" aria-labelledby="p4">
+          <div class="project-media">
+            <img src="proj-hotel.jpg" alt="Hotel Booking System screenshot">
+          </div>
+
+          <div class="project-body">
+            <div>
+              <h4 id="p4" class="project-title">Hotel Booking System</h4>
+              <p class="project-desc">Room booking, cancellation, and payment calculation with customer record storage using C structures.</p>
+
+              <div class="project-tools">
+                <div class="label">🧰 Tools & Languages Used:</div>
+                <div class="tech-pill">C</div>
+                <div class="tech-pill">Structures</div>
+                <div class="tech-pill">File I/O</div>
+              </div>
+            </div>
+
+            <div class="project-actions">
+              <a class="btn" href="https://github.com/aiva-11/Hotel-Booking-System-" target="_blank" rel="noopener">View Code</a>
+            </div>
+          </div>
+        </article>
 
       </div>
     </section>
 
-    <!-- Certifications -->
+    <!-- Certifications (large thumbnails) -->
     <section id="certs" class="section">
       <h3>Certifications</h3>
       <div class="cert-grid">
-        <div class="cert">
-          <span class="ribbon gold">Certified</span>
+        <div class="cert-card" tabindex="0" data-src="cert-prog.jpg">
           <img src="cert-prog.jpg" alt="Programming Languages certificate">
-          <div class="caption">Programming Languages — Nice Academy</div>
+          <div class="cert-caption">Programming Languages — Nice Academy</div>
         </div>
 
-        <div class="cert">
-          <span class="ribbon blue">Top Performer</span>
-          <img src="cert.uiux.jpg" alt="UI/UX Design certificate">
-          <div class="caption">UI/UX Design — Codsoft</div>
+        <div class="cert-card" tabindex="0" data-src="cert.uiux.jpg">
+          <img src="cert.uiux.jpg" alt="UI/UX certificate">
+          <div class="cert-caption">UI/UX Design — Codsoft</div>
         </div>
 
-        <div class="cert">
-          <span class="ribbon green">Completion</span>
+        <div class="cert-card" tabindex="0" data-src="cert.web.jpg">
           <img src="cert.web.jpg" alt="Web Development certificate">
-          <div class="caption">Web Development — Pacific Creation</div>
+          <div class="cert-caption">Web Development — Pacific Creation</div>
         </div>
 
-        <div class="cert">
-          <span class="ribbon gold">Certified</span>
-          <img src="cert.database.jpg" alt="Database Management certificate">
-          <div class="caption">Database Management — Skillrack</div>
-        </div>
-
-        <div class="cert">
-          <span class="ribbon red">Internship</span>
-          <img src="cert.cyber.jpg" alt="Cyber Security certificate">
-          <div class="caption">Cyber Security — Skillcraft Technology</div>
-        </div>
-
-        <div class="cert">
-          <span class="ribbon green">Project</span>
-          <img src="cert.IoT.jpg" alt="IoT & Embedded Systems certificate">
-          <div class="caption">IoT & Embedded Systems — Coincent Support</div>
-        </div>
-
-        <div class="cert">
-          <span class="ribbon gray">Course</span>
-          <img src="cert.Emb.jpg" alt="Embedded Systems certificate">
-          <div class="caption">Embedded Systems — Taras and Systems Solutions</div>
-        </div>
-
-        <div class="cert">
-          <span class="ribbon gold">NPTEL</span>
-          <img src="cert.nptel.jpg" alt="Introduction to IoT certificate">
-          <div class="caption">Introduction to Internet of Things — IIT Kharagpur (NPTEL)</div>
+        <div class="cert-card" tabindex="0" data-src="cert.database.jpg">
+          <img src="cert.database.jpg" alt="Database certificate">
+          <div class="cert-caption">Database Management — Skillrack</div>
         </div>
       </div>
     </section>
 
-    <!-- Contact (form + details) -->
-    <section id="contact" class="section" aria-labelledby="contact-heading">
-      <h3 id="contact-heading">Contact</h3>
-
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h3>Contact</h3>
       <div class="card">
         <div class="contact-grid">
-          <!-- Left: form -->
           <div>
             <form id="contactForm" aria-describedby="form-note">
               <label for="name" class="form-note" style="display:block;margin-bottom:6px;color:var(--muted);font-weight:600">Your Name</label>
@@ -291,16 +348,13 @@
                 <div id="formFeedback" class="feedback" role="status" aria-live="polite" style="min-width:220px"></div>
               </div>
 
-              <div id="form-note" class="form-note">Prefer direct contact? Email me at <a href="mailto:aiva02400@gmail.com" style="color:var(--accent)">aiva02400@gmail.com</a> or call <a href="tel:+917598154244" style="color:var(--accent)">+91 75981 54244</a>.</div>
+              <div id="form-note" class="form-note" style="margin-top:10px">Prefer direct contact? Email me at <a href="mailto:aiva02400@gmail.com" style="color:var(--accent)">aiva02400@gmail.com</a> or call <a href="tel:+917598154244" style="color:var(--accent)">+91 75981 54244</a>.</div>
             </form>
           </div>
 
-          <!-- Right: contact info -->
           <aside class="contact-info" aria-label="Contact details">
             <div style="font-weight:800;font-size:16px;margin-bottom:6px">Get in touch</div>
-            <p class="muted" style="margin-top:0">
-              I'm open to job opportunities, internships, and freelance projects. Send a message — I'll try to reply within 1–3 business days.
-            </p>
+            <p class="muted" style="margin-top:0">I'm open to job opportunities, internships, and freelance projects. Send a message — I'll try to reply within 1–3 business days.</p>
 
             <div style="margin-top:12px">
               <div class="muted" style="font-weight:700">Email</div>
@@ -325,22 +379,24 @@
     <footer><p>© <span id="year"></span> Aishwarya Srinivasabalaji • Built with ❤️</p></footer>
   </div>
 
-  <!-- Image modal -->
+  <!-- Certificate image modal -->
   <div class="img-modal" id="imgModal" role="dialog" aria-hidden="true">
-    <button id="closeImg" aria-label="Close" style="position:absolute;top:18px;right:20px;background:none;border:0;color:#ddd;font-size:20px;cursor:pointer">✕</button>
+    <button id="closeImg" aria-label="Close" style="position:absolute;top:18px;right:26px;background:none;border:0;color:#ddd;font-size:22px;cursor:pointer">✕</button>
     <img id="modalImg" src="" alt="certificate view">
   </div>
 
   <script>
-    // year
+    // set year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // certificate zoom
-    document.querySelectorAll('.cert img').forEach(img => {
-      img.addEventListener('click', () => {
-        document.getElementById('modalImg').src = img.src;
+    // open certificate modal
+    document.querySelectorAll('.cert-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const src = card.getAttribute('data-src') || card.querySelector('img').src;
+        document.getElementById('modalImg').src = src;
         document.getElementById('imgModal').classList.add('show');
       });
+      card.addEventListener('keypress', (e) => { if(e.key === 'Enter') card.click(); });
     });
     document.getElementById('closeImg').addEventListener('click', () => document.getElementById('imgModal').classList.remove('show'));
     document.getElementById('imgModal').addEventListener('click', (e) => { if (e.target.id === 'imgModal') document.getElementById('imgModal').classList.remove('show'); });
@@ -353,22 +409,16 @@
       });
     });
 
-    // Contact form handling using Formspree fetch (AJAX) with graceful fallback
+    // Contact form handler (Formspree AJAX)
     (function(){
       const form = document.getElementById('contactForm');
+      if(!form) return;
       const sendBtn = document.getElementById('sendBtn');
       const clearBtn = document.getElementById('clearBtn');
       const feedback = document.getElementById('formFeedback');
+      const FORMSPREE_ENDPOINT = 'https://formspree.io/f/your-form-id'; // replace with your endpoint
 
-      // Replace this with your Formspree endpoint (or another endpoint)
-      const FORMSPREE_ENDPOINT = 'https://formspree.io/f/your-form-id';
-
-      // Clear form
-      clearBtn.addEventListener('click', () => {
-        form.reset();
-        feedback.textContent = '';
-        feedback.className = 'feedback';
-      });
+      clearBtn.addEventListener('click', () => { form.reset(); feedback.textContent = ''; feedback.className = 'feedback'; });
 
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -399,16 +449,12 @@
             feedback.classList.add('success');
           } else {
             const data = await res.json().catch(() => ({}));
-            if (data && data.errors) {
-              feedback.textContent = (data.errors[0] && data.errors[0].message) ? data.errors[0].message : 'There was an error sending your message.';
-            } else {
-              feedback.textContent = 'There was an error sending your message. Please try again later or email directly.';
-            }
+            feedback.textContent = (data && data.errors && data.errors[0] && data.errors[0].message) ? data.errors[0].message : 'There was an error sending your message. Try again later.';
             feedback.classList.add('error');
           }
         } catch (err) {
           console.error(err);
-          feedback.textContent = 'Network error — please check your connection or send an email directly.';
+          feedback.textContent = 'Network error — please check your connection or email directly.';
           feedback.classList.add('error');
         } finally {
           sendBtn.disabled = false;
@@ -419,6 +465,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
